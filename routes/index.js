@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
 
   
   var sub = [];
+  topicss=[];
   var MongoClient = require('mongodb').MongoClient;
   var url = "mongodb+srv://akash:akashvel98%40kum@cluster0.9al2j.mongodb.net";
   var dis =[{comment:"",replyby:""}];
