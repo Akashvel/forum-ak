@@ -1,0 +1,20 @@
+<html>
+    <body style="background-color: bisque;">
+        <div>
+            <center>
+                <h2 style="padding-left: 40px;" id="email"><%= email%></h2>
+            </center>
+        </div>
+        <div style="margin-top: 100px;border-radius: 20px;margin-left: 350px;margin-right: 300px;background-color: rgb(88, 151, 187);padding-bottom: 30px;padding-top: 30px;">
+            <center>
+                <form action="/question" method="post">
+                <label style="font-size: 20px;">Topic:</label><br><br>
+                <input type="text" name="topic" style="width: 400px;"><br><br>
+                <label style="font-size: 20px;">Description:</label><br><br>
+                <textarea name="description" style="width: 400px;height: 150px;"></textarea><br><br><br>
+                <input type="submit" value="Post" style="width: 150px;border-radius: 15px;">
+                </form>
+            </center>
+        </div>
+    </body>
+</html>

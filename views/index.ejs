@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    
+  </head>
+  <body style="background-color:#d5f4e6;">
+    <div style="margin-top: 5px;margin-bottom: 10px;width: 100%;background-color:#fefbd8;padding-top: 30px;padding-bottom: 30px;height: 250px;">
+
+      <div style="width: 50%; float: left;">
+        <center>
+          <h2><%= loginstatus %></h2>  
+          <form action="/userlogin" method="post">
+              Email: <input name="email" type="text" style="margin-left: 21px;" /> <br /><br/>
+              Password: <input name="password" type="password" /> <br /><br/>
+              <input type="submit" value="Login" style="width: 100px;border-radius: 8px;" />
+          </form>
+        </center>
+      </div>
+
+      <div style="width: 50%; float: left;">
+        <center>
+          <h2>SignUp</h2>  
+          <form action="/usersignup" method="post">
+              Email: <input name="semail" type="text" style="margin-left: 73px;" /> <br /><br/>
+              Password: <input name="spassword" type="password" style="margin-left: 53px;" /> <br /><br/>
+              Confirm Password: <input name="scpassword" type="password" /> <br /><br/>
+              <input type="submit" value="SignUp" style="width: 100px;border-radius: 8px;" />
+          </form>
+        </center>
+      </div>
+      
+
+      
+    </div> 
+      <div>
+        <div style="width: 25%;float: left;">
+          <center style="margin-top: 10px;">
+          <h1 name="sidetopics" id="sde">Topics</h1>
+          <div style="margin-top: 30px;height: 300px;background-color: #618685;padding-top: 20px;border-radius: 15px;overflow-y: scroll;">
+            <%sub.forEach(s => { %>
+              <form action="btnclk" method="post">
+                <button style="width: 100px;border-radius: 8px;" name="ak" value=<%= s.name%>><%= s.name %></button><br><br>
+              </form>
+            <% }); %>
+          </div>
+          </center>
+        </div>
+        <div style="width: 75%;float: left;">
+          <center style="margin-top: 10px;">
+            <h2>DESCRIPTION</h2>
+            <div style="margin-top: 40px;background-color: #618685;padding-top: 20px; height: 300px;overflow-y: scroll;color: aliceblue;border-radius: 15px;" id="tt1">
+              <h2 name="discussiontoppic" value=<%= discussiontoppic %>><%= discussiontoppic %></h2>
+                 <div id="cc">
+                  <%dis.forEach(d => { %>
+                    <p style="float: left;"><%= d.comment %></p>
+                    <p style="float: right;"><%= d.replyby %></p><br><br>
+                  <% }); %>
+                 </div>
+            </div>
+          </center>
+        </div>
+      </div>
+      
+  
+    
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<html>
+    <body style="background-color: #d5f4e6;">
+      <div style="height: 100px;background-color: #fefbd8;width: 100%;">
+        <div style="float: right;margin-top: 40px;">
+          <center>
+            <form action="/okok" method="post">
+                <input type="submit" value="Post Question" style="border-radius: 10px;" />
+            </form>
+          </center>
+        </div>
+        <div>
+          <center>
+              <h2  name="email"><%= email %></h2>
+          </center>
+        </div>
+      </div>
+        <div style="margin-top: 30px;">
+          <center>
+            <div style="width: 25%;float: left;">
+              <h1 name="sidetopics" id="sde">Topics</h1>
+              <div style="margin-top: 38px;height: 300px;background-color: #618685;padding-top: 20px;overflow-y: scroll;">
+              <%sub.forEach(s => { %>
+                <form action="forumtopic" method="post">
+                  <button style="width: 100px;border-radius: 8px;" name="forumtopicclick" value=<%= s.name%>><%= s.name %></button>
+                </form>
+              <% }); %>
+              </div>
+            </center>
+            </div>
+            <div style="width: 75%;float: left;">
+              <center>
+                <h2>DESCRIPTION</h2>
+                <div style="margin-top: 50px;background-color: #618685;padding-top: 20px; height: 300px;overflow-y: scroll;color: aliceblue;" id="tt1">
+                  <h2 id="tpc" name="selectedtopic" value=<%= selectedtopic %>><%= selectedtopic %></h2>
+                     <div id="cc">
+                      <%dis.forEach(d => { %>
+                        <p style="float: right;"><%= d.comment %></p>
+                        <p style="float: left;"><%= d.replyby %></p><br><br>
+                      <% }); %>
+                     </div>
+                </div>
+              </center>
+              <div style="float: left; margin-top: 20px;">
+                <form action="commentbutton" method="post">
+                  <input type="text" style="height: 50px;width: 1000px;" name="commenttext">
+                  <input type="submit" value="Reply" style="width: 100px;height: 50px;"/>
+                </form>
+              </div>
+            </div>
+          </div>
+    </body>
+</html>
